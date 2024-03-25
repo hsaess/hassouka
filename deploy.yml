@@ -1,0 +1,11 @@
+---
+- name: Déploiement du conteneur Docker Nginx avec Ansible
+  hosts: all
+  become: true
+  tasks:
+    - name: Déployer le conteneur Docker Nginx
+      docker_container:
+        name: nginx
+        image: nginx:latest
+        ports:
+          - "8000:80"
